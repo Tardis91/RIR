@@ -1,0 +1,101 @@
+/* docs/style.css */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+  --text-color: #333;
+  --heading-color: #111;
+  --link-color: #0066cc;
+  --border-color: #ddd;
+  --bg-code: #f7f7f7;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  color: var(--text-color);
+  line-height: 1.7;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 2rem 1rem;
+  background: #fff;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--heading-color);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+th, td {
+  border: 1px solid var(--border-color);
+  padding: 0.75rem;
+  text-align: left;
+}
+th {
+  background: #f4f4f4;
+  font-weight: 600;
+}
+
+pre, code {
+  font-family: 'Courier New', monospace;
+  background: var(--bg-code);
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  overflow-x: auto;
+}
+pre {
+  margin: 1.5rem 0;
+}
+
+ul, ol {
+  margin: 1rem 0 1rem 1.5rem;
+}
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid var(--border-color);
+  background: #f9f9f9;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}
