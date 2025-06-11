@@ -58,9 +58,35 @@ GBPUSD         2.503      0.056    45.05   0.000
 UK_CPI_YOY     0.279      0.007    42.07   0.000  
     </pre>
 
-    <h2>Economic Interpretation</h2>
-    <p><strong>Currency Dynamics:</strong> A stronger pound often coincides with tighter monetary conditions or capital inflows, pushing yields higher. FX markets price in divergences between UK and US policy, so GBP appreciation forecasts higher UK rates.</p>
-    <p><strong>Inflation Expectations:</strong> Higher CPI YoY signals rising consumer prices, eroding real returns and prompting market expectations of Bank of England rate hikes, embedding them into longer-term yields.</p>
+   <h2>Regression Results</h2>
+<p>To quantify the relative impact of currency movements and inflation on UK 10-year gilt yields, we estimated the following daily OLS model over 4,724 observations (Apr 2006–Jun 2025):</p>
+<pre>UK_10Y_Yieldₜ = α + β₁·GBPUSDₜ + β₂·UK_CPI_YoYₜ + εₜ</pre>
+<table>
+  <tr><th>Variable</th><th>Coefficient</th><th>Std. Error</th><th>t-Statistic</th><th>p-Value</th></tr>
+  <tr><td>Intercept (α)</td><td>−1.682</td><td>0.090</td><td>−18.72</td><td><0.001</td></tr>
+  <tr><td>GBPUSD (β₁)</td><td> 2.503</td><td>0.056</td><td> 45.05</td><td><0.001</td></tr>
+  <tr><td>UK CPI YoY (β₂)</td><td> 0.279</td><td>0.007</td><td> 42.07</td><td><0.001</td></tr>
+</table>
+<p><strong>Key metrics:</strong>  
+<ul>
+  <li><strong>R² = 0.394</strong>: The model explains ~39 % of the day-to-day variation in 10-year yields.</li>
+  <li>Both predictors are highly significant (p &lt; 0.001), indicating robust relationships in-sample.</li>
+  <li>The constant term is negative (−1.682), reflecting baseline yield dynamics when both GBPUSD and inflation are at zero—a statistical artifact given non-zero means.</li>
+</ul>
+</p>
+
+<h2>Economic Interpretation</h2>
+<p><strong>1. Currency Movements (GBP/USD)</strong><br>
+The positive coefficient of <strong>2.503</strong> means that when the pound strengthens by $0.10 against the dollar, the 10-year yield tends to rise by roughly 0.25 percentage points. This highlights how FX markets—and the flow of international capital they signal—drive gilt yields. A stronger pound often coincides with expectations of tighter UK monetary conditions relative to the US, leading investors to demand higher yield premia on long-term debt.</p>
+
+<p><strong>2. Inflation Expectations (UK CPI YoY)</strong><br>
+The inflation coefficient of <strong>0.279</strong> implies that a 1 pp increase in year-on-year CPI inflation is associated with a ~0.28 pp rise in the gilt yield. This is consistent with the view that bond investors require higher nominal yields to offset the erosion of real returns when consumer prices accelerate. It also embeds expectations that the Bank of England will raise policy rates to rein in inflation, especially when CPI surpasses target ranges.</p>
+
+<p><strong>3. Relative Magnitudes</strong><br>
+Although both factors are significant, currency moves exert a larger short-term effect on yields because daily FX fluctuations (often 0.5–1 %) translate into more pronounced yield shifts than the typically smaller daily changes in monthly-smoothed inflation (0.01–0.05 pp). This suggests that, on a day-to-day basis, investors react more strongly to global risk and rate-differential signals than to incremental changes in consumer prices.</p>
+
+<p><strong>4. Unexplained Variation</strong><br>
+With ~61 % of yield variation left unexplained, other drivers—such as global 10-year UST yields, Bank of England base rate changes, liquidity conditions, and risk sentiment—play important roles. Incorporating those variables, or using higher-frequency monetary policy announcements and volatility indices, could further improve explanatory power.</p>
 
     <h2>Limitations</h2>
     <ul>
